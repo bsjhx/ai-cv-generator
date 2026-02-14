@@ -1,3 +1,5 @@
 streamlit
 langchain_google_genai
 python-dotenv
+notebook
+ipykernel

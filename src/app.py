@@ -42,7 +42,8 @@ if st.button("Generate Tailored CV", type="primary"):
                 
                 sys_msg = SystemMessage(content="""You are a Senior Career Coach. 
                 Generate a professional CV in Markdown. 
-                Highlight the user's skills that specifically match the Job Description.""")
+                Highlight the user's skills that specifically match the Job Description.
+                Do not """)
                 
                 user_msg = HumanMessage(content=f"HISTORY: {history}\nSTUDIES: {studies}\nPROJECTS: {projects}\n\nJOB: {job_desc}")
                 

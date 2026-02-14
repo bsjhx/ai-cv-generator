@@ -11,9 +11,15 @@ pinned: false
 short_description: Streamlit template space
 ---
 
-# Welcome to Streamlit!
+# Welcome to CV generator!!!
 
-Edit `/src/streamlit_app.py` to customize this app to your heart's desire. :heart:
+This is very simple, done as fun project to learn how to use LLM and Langchain.
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+## Run locally
+
+``` bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+streamlit run src/app.py 
+```
