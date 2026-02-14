@@ -1,6 +1,6 @@
 ---
-title: Test
-emoji: 🚀
+title: CV generator
+emoji: ✅
 colorFrom: red
 colorTo: red
 sdk: docker
