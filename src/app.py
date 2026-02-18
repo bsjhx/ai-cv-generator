@@ -11,7 +11,7 @@ google_api_key = os.getenv("GOOGLE_API_KEY")
 st.set_page_config(page_title="AI CV Tailor (Gemini Edition)", page_icon="♊")
 
 st.title("♊ AI Resume Tailor (Free Tier)")
-
+1
 # Sidebar for Context
 with st.sidebar:
     st.header("👤 Your Professional History")
