@@ -1,3 +1,4 @@
+from llm.llm_wrapper import LLMWrapper
 import streamlit as st
 import os
 from dotenv import load_dotenv
@@ -34,12 +35,8 @@ if st.button("Generate Tailored CV", type="primary"):
         try:
             with st.spinner("Gemini is crafting your resume..."):
                 # Initialize Gemini (Flash is best for speed/cost)
-                llm = ChatGoogleGenerativeAI(
-                    model="gemini-2.5-flash",
-                    google_api_key=google_api_key,
-                    temperature=0.7
-                )
-                
+                llm = LLMWrapper(api_key=google_api_key, model_name="gemini-2.5-flash")
+
                 sys_msg = SystemMessage(content="""You are a Senior Career Coach. 
                 Generate a professional CV in Markdown. 
                 Highlight the user's skills that specifically match the Job Description.
@@ -47,7 +44,7 @@ if st.button("Generate Tailored CV", type="primary"):
                 
                 user_msg = HumanMessage(content=f"HISTORY: {history}\nSTUDIES: {studies}\nPROJECTS: {projects}\n\nJOB: {job_desc}")
                 
-                response = llm.invoke([sys_msg, user_msg])
+                response = llm.invoke_with_messages(sys_msg, user_msg)
                 
                 st.subheader("✨ Your Generated CV")
                 st.markdown(response.content)

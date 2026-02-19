@@ -8,8 +8,8 @@ def test_ask_llm_returns_stubbed_response():
     fake_llm = GenericFakeChatModel(messages=iter([AIMessage(content="hello from fake llm")]))
     wrapper = LLMWrapper(llm=fake_llm)
 
-    result = wrapper.ask_llm(
+    result = wrapper.invoke(
         system_prompt_str="You are a helpful assistant", user_prompt_str="Say hello"
     )
 
-    assert result == "hello from fake llm"
+    assert result.content == "hello from fake llm"

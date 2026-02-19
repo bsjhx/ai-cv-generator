@@ -8,8 +8,11 @@ class LLMWrapper:
             model=model_name, google_api_key=api_key, temperature=0.7
         )
 
-    def ask_llm(self, system_prompt_str, user_prompt_str):
+    def invoke(self, system_prompt_str, user_prompt_str):
         system_message = SystemMessage(content=system_prompt_str)
-        user_msg = HumanMessage(content=user_prompt_str)
-        response = self.llm.invoke([system_message, user_msg])
-        return response.content
+        user_message = HumanMessage(content=user_prompt_str)
+        return self.invoke_with_messages(system_message, user_message)
+
+    def invoke_with_messages(self, system_message, user_message):
+        response = self.llm.invoke([system_message, user_message])
+        return response
