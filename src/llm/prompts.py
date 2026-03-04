@@ -2,10 +2,8 @@ import json
 
 from src.models.work_experience import Education, Project, UserProfile, WorkExperience
 
+
 # Prompts used in first phase, generating JSON from dirty context of user input
-PROMPT_USER_ASK_FOR_JSON = "Please process the following UI inputs:"
-
-
 def get_user_prompt_ask_for_json(ui_data_str: str):
     return f"Please process the following UI inputs:{json.dumps(ui_data_str)}"
 
