@@ -5,6 +5,8 @@ class WorkExperience(BaseModel):
     company: str
     role: str
     years: str
+    description: Optional[str]=None
+    skills: Optional[List[str]]=None
 
 class Education(BaseModel):
     institution: str
