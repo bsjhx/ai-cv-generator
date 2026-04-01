@@ -1,6 +1,13 @@
 from typing import List, Optional
 from pydantic import BaseModel, Field
 
+class PersonalInfo(BaseModel):
+    name: str
+    email: Optional[str]=None
+    phone: Optional[str]=None
+    linkedin: Optional[str]=None
+    github: Optional[str]=None
+
 class WorkExperience(BaseModel):
     company: str
     role: str
@@ -17,6 +24,7 @@ class Project(BaseModel):
     description: str
 
 class UserProfile(BaseModel):
+    personal_info: PersonalInfo
     history: List[WorkExperience]
     studies: List[Education]
     projects: List[Project]

@@ -23,3 +23,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 streamlit run src/app.py 
 ```
+
+## Tests
+
+``` bash
+pytest
+```

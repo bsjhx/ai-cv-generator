@@ -5,7 +5,7 @@ from langchain_core.messages import SystemMessage, HumanMessage
 class LLMWrapper:
     def __init__(self, llm=None, model_name="gemini-2.5-flash", api_key=None):
         self.llm = llm or ChatGoogleGenerativeAI(
-            model=model_name, google_api_key=api_key, temperature=0.7
+            model=model_name, google_api_key=api_key, temperature=0.7, response_mime_type="application/json"
         )
 
     def invoke(self, system_prompt_str, user_prompt_str):

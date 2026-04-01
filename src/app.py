@@ -36,7 +36,6 @@ if st.button("Generate Tailored CV", type="primary"):
     else:
         try:
             with st.spinner("Gemini is crafting your resume..."):
-                # Initialize Gemini (Flash is best for speed/cost)
                 llm = LLMWrapper(api_key=google_api_key, model_name="gemini-2.5-flash")
 
                 sys_msg = SystemMessage(
